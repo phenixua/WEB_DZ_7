@@ -1,0 +1,6 @@
+sqlalchemy~=2.0.23
+python = "^3.11"
+sqlalchemy = "^2.0.23"
+alembic = "^1.12.1"
+faker = "^19.13.0"
+psycopg2 = "^2.9.9"

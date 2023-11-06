@@ -27,9 +27,10 @@ class Student(Base):
 class Subject(Base):
     __tablename__ = 'subjects'
     id = Column(Integer, primary_key=True)
-    name = Column(String(175), nullable=False)
+    name = Column(String(200), nullable=False)
     teacher_id = Column('teacher_id', ForeignKey('teachers.id', ondelete='CASCADE'))
-    teacher = relationship('Teacher', backref='disciplines')
+    teacher = relationship('Teacher', backref='subjects')
+    # teacher = relationship('Teacher', backref='disciplines')
 
 
 class Grade(Base):
@@ -39,5 +40,7 @@ class Grade(Base):
     grade_date = Column('grade_date', Date, nullable=True)
     student_id = Column('student_id', ForeignKey('students.id', ondelete='CASCADE'))
     subjects_id = Column('subject_id', ForeignKey('subjects.id', ondelete='CASCADE'))
-    student = relationship('Student', backref='grade')
-    discipline = relationship('Subject', backref='grade')
+    student = relationship('Student', backref='grades')
+    subject = relationship('Subject', backref='grades')
+    # student = relationship('Student', backref='grade')
+    # discipline = relationship('Subject', backref='grade')

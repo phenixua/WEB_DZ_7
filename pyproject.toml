@@ -1,13 +1,16 @@
 [tool.poetry]
 name = "web-dz-7"
 version = "0.1.0"
-description = ""
+description = "ORM SQLAlchemy"
 authors = ["phenixua <112823718+phenixua@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-
+sqlalchemy = "^2.0.23"
+alembic = "^1.12.1"
+faker = "^19.13.0"
+psycopg2 = "^2.9.9"
 
 [build-system]
 requires = ["poetry-core"]
